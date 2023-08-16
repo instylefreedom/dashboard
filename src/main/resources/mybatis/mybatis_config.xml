@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <!-- defined : type aliases -->
+    <typeAliases>
+        <typeAlias type="java.util.Map" alias="map"/>
+        <typeAlias type="java.util.HashMap" alias="hashmap"/>
+        <typeAlias type="co.gxc.ground.common.data.file.S3FileVO" alias="S3FileVO"/>
+        <typeAlias type="co.gxc.ground.common.data.file.S3FileOption" alias="S3FileOption"/>
+        <!-- database value objects -->
+        <!-- <typeAlias type="co.gxc.ground.entity.user.UserDVO" alias="UserDVO"/>
+        <typeAlias type="co.gxc.ground.entity.game.GameDVO" alias="GameDVO"/>
+        <typeAlias type="co.gxc.ground.entity.game.GameLikeListDVO" alias="GameLikeListDVO"/>
+        <typeAlias type="co.gxc.ground.entity.game.GameCommentDVO" alias="GameCommentDVO"/>
+        <typeAlias type="co.gxc.ground.entity.game.GameCommentLikeListDVO" alias="GameCommentLikeListDVO"/>
+        <typeAlias type="co.gxc.ground.entity.game.GameRewardItemDVO" alias="GameRewardItemDVO"/>
+        <typeAlias type="co.gxc.ground.entity.surveyreview.FormListDVO" alias="FormListDVO"/> -->
+
+        <!-- api value objects -->
+        <!-- <typeAlias type="co.gxc.ground.interfaces.network.response.GameForClipAVO" alias="GameForClipAVO"/>
+        <typeAlias type="co.gxc.ground.interfaces.network.response.GameFileAVO" alias="GameFileAVO"/>
+        <typeAlias type="co.gxc.ground.data.vo.GameCommentAVO" alias="GameCommentAVO"/>
+        <typeAlias type="co.gxc.ground.interfaces.network.response.GameListAVO" alias="GameListAVO"/>
+        <typeAlias type="co.gxc.ground.interfaces.network.response.GameFileInGameListAVO" alias="GameFileOfGameListAVO"/>
+        <typeAlias type="co.gxc.ground.data.vo.GameListCardAVO" alias="GameListCardAVO"/>
+        <typeAlias type="co.gxc.ground.data.vo.GameClipListCardAVO" alias="GameClipListCardAVO"/>
+        <typeAlias type="co.gxc.ground.data.vo.DisplayedPickedReviewAVO" alias="DisplayedPickedReviewAVO"/>
+        <typeAlias type="co.gxc.ground.data.vo.TestingGameVideoCollectionCardAVO" alias="TestingGameVideoCollectionCardAVO"/> -->
+
+    </typeAliases>
+
+    <!-- define : mappers -->
+    <mappers>
+        <!-- common mapper -->
+        <mapper resource="mybatis/common.xml" />
+    </mappers>
+
+</configuration>
