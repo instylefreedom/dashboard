@@ -8,8 +8,8 @@
     <typeAliases>
         <typeAlias type="java.util.Map" alias="map"/>
         <typeAlias type="java.util.HashMap" alias="hashmap"/>
-        <typeAlias type="co.gxc.ground.common.data.file.S3FileVO" alias="S3FileVO"/>
-        <typeAlias type="co.gxc.ground.common.data.file.S3FileOption" alias="S3FileOption"/>
+<!--        <typeAlias type="co.gxc.ground.common.data.file.S3FileVO" alias="S3FileVO"/>-->
+<!--        <typeAlias type="co.gxc.ground.common.data.file.S3FileOption" alias="S3FileOption"/>-->
         <!-- database value objects -->
         <!-- <typeAlias type="co.gxc.ground.entity.user.UserDVO" alias="UserDVO"/>
         <typeAlias type="co.gxc.ground.entity.game.GameDVO" alias="GameDVO"/>
@@ -35,7 +35,7 @@
     <!-- define : mappers -->
     <mappers>
         <!-- common mapper -->
-        <mapper resource="mybatis/common.xml" />
+<!--        <mapper resource="mybatis/common.xml" />-->
     </mappers>
 
 </configuration>
