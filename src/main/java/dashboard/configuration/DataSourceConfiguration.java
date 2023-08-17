@@ -32,7 +32,7 @@ public class DataSourceConfiguration {
         SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        sessionFactory.setMapperLocations(resolver.getResources("classpath:mybatis/**/*.xml,classpath:mybatis/board/*.xml")); // env.getProperty("spring.mybatis.mapper-locations");
+        sessionFactory.setMapperLocations(resolver.getResources("classpath:mybatis/*/**/*.xml")); // env.getProperty("spring.mybatis.mapper-locations");
         String mybatisConfigLocation ="classpath:mybatis/mybatis_config.xml"; // env.getProperty("spring.mybatis.config-locations");
 
         if (mybatisConfigLocation!=null) {
