@@ -5,11 +5,16 @@ server:
 # database 연동 설정
 spring:
   datasource:
-    driver-class-name: org.mariadb.jdbc.Driver
-    url: jdbc:mariadb://localhost:3306/dashboard
-    username: will
-    password: will
-
+    hikari:
+      platform: mysql
+      driver-class-name: org.mysql.cj.jdbc.Driver
+      jdbc-url: jdbc:mysql://54.180.149.160:3306/dashboard?serverTimezone=UTC&characterEncoding=UTF-8
+      username: will
+      password: will
+  #    driver-class-name: org.mariadb.jdbc.Driver
+  #    url: jdbc:mariadb://localhost:3306/dashboard
+  #    username: will
+  #    password: will
   thymeleaf:
     cache: false
 

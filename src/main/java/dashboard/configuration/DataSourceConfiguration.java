@@ -1,6 +1,9 @@
 package dashboard.configuration;
 import javax.sql.DataSource;
 
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -17,14 +20,26 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 @Configuration
 @MapperScan(basePackages= {"dashboard"})
 @EnableTransactionManagement
+@Slf4j
 public class DataSourceConfiguration {
 
     @Autowired
     private Environment env;
+
+    @Bean
+    @ConfigurationProperties(prefix = "spring.datasource.hikari")
+    public HikariConfig hikariConfig() {
+        HikariConfig hikariConfig = new HikariConfig();
+        log.info("this is HikariConfig info: " + hikariConfig.getDataSource());
+        log.info("this is HikariConfig info: " + hikariConfig.getJdbcUrl());
+        return hikariConfig;
+    }
     @Bean(name="dataSource")
-    @ConfigurationProperties(prefix = "spring.datasource")
+//    @ConfigurationProperties(prefix = "spring.datasource.hikari")
     public DataSource dataSource() {
-        return DataSourceBuilder.create().build();
+        HikariDataSource dataSource = new HikariDataSource(hikariConfig());
+        return dataSource;
+//        return DataSourceBuilder.create().build();
     }
 
     @Bean
