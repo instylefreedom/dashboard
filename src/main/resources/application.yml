@@ -6,11 +6,16 @@ server:
 spring:
   datasource:
     hikari:
-      platform: mysql
-      driver-class-name: org.mysql.cj.jdbc.Driver
+#      platform: mysql
+#      driver-class-name: org.mysql.cj.jdbc.Driver
+      driver-class-name: com.mysql.jdbc.Driver
       jdbc-url: jdbc:mysql://54.180.149.160:3306/dashboard?serverTimezone=UTC&characterEncoding=UTF-8
       username: will
       password: will
+#    hikari:
+
+#      platform: mysql
+
   #    driver-class-name: org.mariadb.jdbc.Driver
   #    url: jdbc:mariadb://localhost:3306/dashboard
   #    username: will

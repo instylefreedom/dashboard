@@ -4,8 +4,7 @@
 
     <insert id="save" parameterType="dashboard.data.BoardDTO" >
         INSERT INTO board_table(
-             id
-            ,boardWriter
+             boardWriter
             ,boardPass
             ,boardTitle
             ,boardContents
@@ -14,12 +13,10 @@
             ,boardUpdatedTime
         )
         VALUES (
-            #{id}
-           ,#{boardWriter}
+            #{boardWriter}
            ,#{boardPass}
-           ,#{boardWriter}
            ,#{boardTitle}
-           ,#{boardWriter}
+           ,#{boardContents}
            ,#{boardHits}
            ,#{boardCreatedTime}
            ,#{boardUpdatedTime}

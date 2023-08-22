@@ -25,6 +25,6 @@ public class BoardController {
         log.info("this is board data" + boardDTO);
         boardService.save(boardDTO);
 
-        return null;
+        return "index";
     }
 }

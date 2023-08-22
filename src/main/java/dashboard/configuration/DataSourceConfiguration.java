@@ -9,6 +9,7 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
@@ -18,7 +19,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 @Configuration
-@MapperScan(basePackages= {"dashboard"})
 @EnableTransactionManagement
 @Slf4j
 public class DataSourceConfiguration {
@@ -26,16 +26,29 @@ public class DataSourceConfiguration {
     @Autowired
     private Environment env;
 
+//    @Value("spring.datasource.driverClassName")
+//    private String driverClassName;
+//
+//    @Value("spring.datasource.jdbcUrl")
+//    private String jdbcUrl;
+//    @Value("spring.datasource.username")
+//    private String username;
+//    @Value("spring.datasource.password")
+//    private String password;
+
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource.hikari")
     public HikariConfig hikariConfig() {
         HikariConfig hikariConfig = new HikariConfig();
+//        hikariConfig.setJdbcUrl(jdbcUrl);
+//        hikariConfig.setDriverClassName(driverClassName);
+//        hikariConfig.setUsername(username);
+//        hikariConfig.setPassword(password);
         log.info("this is HikariConfig info: " + hikariConfig.getDataSource());
         log.info("this is HikariConfig info: " + hikariConfig.getJdbcUrl());
         return hikariConfig;
     }
-    @Bean(name="dataSource")
-//    @ConfigurationProperties(prefix = "spring.datasource.hikari")
+    @Bean
     public DataSource dataSource() {
         HikariDataSource dataSource = new HikariDataSource(hikariConfig());
         return dataSource;

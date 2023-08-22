@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 public class BoardRepository {
 
     private final BoardMapper boardMapper;
-
+//
     public int save(BoardDTO boardDTO) {
         return this.boardMapper.save(boardDTO);
     }
