@@ -1,17 +1,7 @@
 package dashboard.repository;
 
-import dashboard.data.BoardDTO;
-import dashboard.mapper.BoardMapper;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Repository;
+import dashboard.entity.BoardEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository
-@RequiredArgsConstructor
-public class BoardRepository {
-
-    private final BoardMapper boardMapper;
-//
-    public int save(BoardDTO boardDTO) {
-        return this.boardMapper.save(boardDTO);
-    }
+public interface BoardRepository extends JpaRepository<BoardEntity, Long> {
 }
